@@ -1,0 +1,17 @@
+#card-electric {
+    background: linear-gradient(to right, rgb(255, 252, 103), rgb(255, 196, 0));
+}
+
+#carta-sombra {
+    box-shadow: 6px 20px 10px rgb(104, 104, 104);
+
+}
+
+.miniDiv {
+    margin-top: -14px;
+    border-top-right-radius: 75px;
+    border-bottom-left-radius: 75px;
+    background-color: rgb(255, 217, 0);
+    box-shadow: 6px 10px 10px rgb(255, 166, 0);
+    border-bottom: solid rgb(202, 164, 59) 3px;
+}
