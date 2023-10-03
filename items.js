@@ -6,9 +6,16 @@ $(document).ready(function () {
     }).done(function (resp) {
         var listaItems = resp.results;
         listaItems.forEach(function (item) {
-
+            $.ajax({
+                url: item.url,
+                type: 'GET'
+            }).done(function (objeto) {
+                var template = ``
+            })
 
         });
     });
 
 });
+
+
