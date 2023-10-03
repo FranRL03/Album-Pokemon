@@ -1,45 +1,15 @@
 $(document).ready(function () {
 
-    // $.ajax({
-    //     url: 'https://pokeapi.co/api/v2/pokemon/',
-    //     type: 'GET'
-    // }).done(function (resp) {
-    //     var listadoPokemons = resp.results;
-    //     var idPk = 1;
-    //     var color = "";
-
     $.ajax({
-        url: 'https://pokeapi.co/api/v2/type/',
+        url: 'https://pokeapi.co/api/v2/pokemon/',
         type: 'GET'
-    }).done(function (tipo) {
-        var listadoTipos = tipo.results;
-
-        listadoTipos.forEach(function (types) {
-            console.log(types.name)
-
-            // if (types.name == 'grass') {
-            //     $('.card-body').addClass('.grass');
-            // }
-
-            $.ajax({
-                url: 'https://pokeapi.co/api/v2/pokemon/',
-                type: 'GET'
-            }).done(function (resp) {
-                var listadoPokemons = resp.results;
-                var idPk = 1;
-                var color = "";
-
-
-            });
-        });
+    }).done(function (resp) {
+        var listadoPokemons = resp.results;
+        var idPk = 1;
 
         listadoPokemons.forEach(function (pokemon) {
 
             console.log(pokemon)
-
-            // var tipo = pokemon.types[0].type.name;
-
-            // console.log(tipo)
 
 
 
