@@ -1,5 +1,9 @@
-#card-electric {
+#electric {
     background: linear-gradient(to right, rgb(255, 252, 103), rgb(255, 196, 0));
+}
+
+#grass {
+    background: linear-gradient(to right, rgb(6, 245, 133), rgb(255, 196, 0));
 }
 
 #carta-sombra {
