@@ -10,7 +10,7 @@ $(document).ready(function () {
                 url: item.url,
                 type: 'GET'
             }).done(function (objeto) {
-                var template = `<span class="badge rounded-pill col-2 mb-4 ms-5 mt-5"><img src=${objeto.sprites.default}><p>${objeto.name}</p></span>`;
+               var template = `<span class="badge rounded-pill col-2 mb-4 ms-5 mt-5" data-bs-toggle="modal" data-bs-target="#myModal"><img src=${objeto.sprites.default}> <p>${objeto.name}</p></span>`;               
                 
                 $('#lista-items').append(template);
             })
