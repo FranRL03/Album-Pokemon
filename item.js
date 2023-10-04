@@ -27,7 +27,7 @@ $(document).ready(function () {
 
             $('#item-name').html(item.name);
             $('#imgItem').attr('src', item.sprites.default);
-            $('#descItem').html(item.flavor_text_entries[0].text);
+            $('#descItem').html(item.flavor_text_entries[0]);
             console.log(item.flavor_text_entries.text)
             $('#itemModal').modal('show');
 
