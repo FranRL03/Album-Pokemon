@@ -56,10 +56,10 @@
     </header>
 
     <main>
-       
-            <div id="lista-pokemon" class="row">
-                
-                <!-- <div class="card m-5 border-4 border-warning  electric" id="carta-sombra"
+
+        <div id="lista-pokemon" class="row">
+
+            <!-- <div class="card m-5 border-4 border-warning  electric" id="carta-sombra"
                     type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <img src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-blue-version/8/89/Pikachu.jpg"
                     class="card-img-top" alt="..." height="240px">
@@ -71,9 +71,45 @@
         
             </div> -->
 
-            
-       
+
+
     </main>
+
+
+    <div class="modal fade" id="pokemonModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content electric">
+
+                <div class="modal-body">
+                    <div class="d-flex justify-content-around">
+                        <img id="img"
+                            src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-blue-version/8/89/Pikachu.jpg"
+                            width="50%" height="60%" alt="">
+                        <div>
+                            <p id="id" class="fw-bold"><span>ID: </span> ...</p>
+                            <hr>
+                            <p id="move" class="fw-bold"><span>MOVE: </span> ...</p>
+                            <hr>
+                            <p id="hp" class="fw-bold"><span> HP:</span>...</p>
+                            <hr>
+                            <p id="specialAttack" class="fw-bold"><span>SPECIAL ATTACK: </span> ...</p>
+                            <hr>
+                            <p><span class="fw-bold">WEIGHT: </span> ...</p>
+                            <hr>
+                            <p><span class="fw-bold">TIPO: </span>: ...</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <p><span class="fw-bold"> SKIN COLOR</span>: Gold</p>
+                    <hr>
+                    <p><span class="fw-bold"> ITEMS</span>: ...</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
 
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -82,40 +118,6 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="api.js"></script>
-
-
-
-
-    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content electric">
-    
-            <div class="modal-body">
-                <div class="d-flex justify-content-around">
-                    <img src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-blue-version/8/89/Pikachu.jpg" width="50%"
-                        height="60%" alt="">
-                    <div>
-                        <p><span class="fw-bold">ID: </span> ...</p>
-                        <p><span class="fw-bold">MOVE: </span> ...</p>
-                        <hr>
-                        <p><span class="fw-bold"> HP:</span>...</p>
-                        <hr>
-                        <p><span class="fw-bold">SPECIAL ATTACK: </span> ...</p>
-                        <hr>
-                        <p><span class="fw-bold">WEIGHT: </span> ...</p>
-                        <hr>
-                        <p><span class="fw-bold">TIPO: </span>: ...</p>
-                    </div>
-                </div>
-                <hr>
-                <p><span class="fw-bold"> SKIN COLOR</span>: Gold</p>
-                <hr>
-                <p><span class="fw-bold"> ITEMS</span>: ...</p>
-            </div>
-            
-          </div>
-        </div>
-      </div> -->
 </body>
 
 </html>
