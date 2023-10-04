@@ -1,9 +1,45 @@
 .electric {
-    background: linear-gradient(to right, rgb(255, 252, 103), rgb(255, 196, 0));
+    background: linear-gradient(to right, rgb(234, 233, 160), rgb(211, 183, 0));
 }
 
 .grass {
-    background: linear-gradient(to right, rgb(6, 245, 133), rgb(255, 196, 0));
+    background: linear-gradient(to right, rgb(6, 245, 133), rgb(33, 116, 77));
+}
+
+.poison{
+    background: linear-gradient(to right,  rgb(54, 54, 99), purple);
+}
+
+.fire{
+    background: linear-gradient(to right, #f1bb5e, #f45151);
+}
+
+.water{
+    background: linear-gradient(to right, rgb(144, 203, 255), rgb(53, 53, 221));
+}
+
+.bug{
+    background: linear-gradient(to right, rgb(133, 176, 103), rgb(8, 73, 43));
+}
+
+.normal{
+    background: linear-gradient(to right, #b684d5, #6d31ce);
+}
+
+.psychic{
+    background: linear-gradient(to right, #f6c0ff, #c2269b);
+}
+
+.fighting{
+    background: linear-gradient(to right, #fac090, #ad6327);
+}
+
+.rock{
+    background: linear-gradient(to right, #816855, #4d2d01);
+}
+
+.ground{
+    background: linear-gradient(to right, #9d6c26, #7c6350);
 }
 
 .carta-sombra {
@@ -11,12 +47,34 @@
     width: 300px;
 }
 
+.ghost{
+    background: linear-gradient(to right, #76667e, #1f0050);
+}
+
+.fairy{
+    background: linear-gradient(to right, #a36a89, #c2269b);
+}
+
+.fondoModal{
+    background: linear-gradient(to right, #fcc3ff,#c80272);
+}
+
 .miniDiv {
     margin-top: -14px;
     border-top-right-radius: 75px;
     border-bottom-left-radius: 75px;
-    background-color: rgb(255, 217, 0);
-    box-shadow: 6px 10px 10px rgb(255, 166, 0);
+    background-color: rgb(232, 222, 164);
+    box-shadow: 6px 10px 10px rgb(217, 186, 128);
     border-bottom: solid rgb(202, 164, 59) 3px;
+}
+
+.divType{
+    box-shadow: 6px 10px 10px rgb(102, 77, 114);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
 }
 
