@@ -1,7 +1,7 @@
 $(document).ready(function () {
     console.log('Hola')
     $.ajax({
-        url: 'https://pokeapi.co/api/v2/item?limit=20',
+        url: 'https://pokeapi.co/api/v2/item?limit=40',
         type: 'GET'
     }).done(function (resp) {
         var listaItems = resp.results;
