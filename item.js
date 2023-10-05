@@ -19,9 +19,17 @@ $(document).ready(function () {
         });
 
         for (var i = 1; i < totalItems / 20; i++) {
-            var template = `<li class="page-item" idPag="${i}"><a class="page-link" href="#">${i}</a></li>`;
+            var template = `<li class="page-item" idPag="${i}"><spam class="page-link" href="#">${i}</spam></li>`;
             $('#pagination').append(template);
-        }
+        };
+
+        $(document).on('click', '#page-item', function () {
+            var pagina = $(this).atrr('idPag');
+            $.ajax({
+                url: `https://pokeapi.co/api/v2/item?limit=20$offset=${pagina - 1 * 20}`,
+                type: 'GET'
+            })
+        })
 
 
     });
