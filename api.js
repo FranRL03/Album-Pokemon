@@ -172,8 +172,6 @@ function renderPokemon(fromPokemon) {
             `;
             $('#lista-pokemon').append(template);
 
-
-
         });
     }
 
