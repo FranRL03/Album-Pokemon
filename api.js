@@ -1,41 +1,37 @@
-const numPokemons = 100;
+const numPokemons = 15;
 const pokemons = [];
+const limitPag = 5;
+const numPags = numPokemons / limitPag;
+var lastPokemonId = 0; 
 
 $(document).ready(function () {
 
-    for (var i = 0; i < numPokemons; i++) {
+    renderPokemon(numPokemons);
+
+    for (let i = 0; i < numPags; i++) {
+
+        var template = `<li class="page-item item" idPag="${i + 1}"><spam class="page-link" href="#">${i + 1}</spam></li>`;
+        $('#pagination').append(template);
+    }
+   
+
+    $(document).on('click', '.item', function () {
+       
+        var pagina = $(this).attr('idPag');
         $.ajax({
-            url: 'https://pokeapi.co/api/v2/pokemon/' + [i + 1],
+            url: `https://pokeapi.co/api/v2/pokemon?limit=${limitPag}$offset=${pagina - 1 * limitPag}`,
             type: 'GET'
-        }).done(function (resp) {
-            pokemons.push(resp);
+        }).done(function (result) {
+            console.log(result);
 
-            var template = `<div class="card btn-view-pokemon m-5 border-4 border-warning ${resp.types[0].type.name} carta-sombra" 
-            type="button" itemid="${resp.id}">
-                <img src= ${resp.sprites.front_default}
-                    class="card-img-top" alt="..." height="240px">
-                <div class="card-body">
-                    <div class="miniDiv ">
-                        <p class="text-center pt-3">${resp.name}</p>   
-                    </div>
+            cleanPokemonList();
+           renderPokemon(lastPokemonId);
 
-                </div>
-            </div>`;
-            $('#lista-pokemon').append(template);
 
 
         });
+    });
 
-
-
-
-        //HACER UN PAGINADOR CON UN FOR. 
-
-        // EN LA API HAY UN PARÁMETRO QUE ES EL OFFSET QUE SIRVE PARA QUE  A LA HORA DE HACE LA PAGINACIÓN AL CLICKAR LA 
-        //PÁGINA 3 SE SALTE LOS 20 PRIMEROS Y LOS 20 SEGUNDO.
-
-        //(PAGE - 1) * 20
-    }
 
     $(document).on('click', '.btn-view-pokemon', function () {
         var pokemonId = $(this).attr('itemid');
@@ -150,5 +146,48 @@ $(document).ready(function () {
     });
 
 });
+
+
+
+function renderPokemon(fromPokemon) {
+    for (var i = fromPokemon; i < fromPokemon + limitPag; i++) {
+        $.ajax({
+            url: 'https://pokeapi.co/api/v2/pokemon/' + [i + 1],
+            type: 'GET'
+        }).done(function (resp) {
+            pokemons.push(resp);
+
+            var template = `
+                <div class="card btn-view-pokemon m-5 border-4 border-warning ${resp.types[0].type.name} carta-sombra" 
+                type="button" itemid="${resp.id}">
+                    <img src= ${resp.sprites.front_default}
+                        class="card-img-top" alt="..." height="240px">
+                    <div class="card-body">
+                        <div class="miniDiv ">
+                            <p class="text-center pt-3">${resp.name}</p>   
+                        </div>
+
+                    </div>
+                </div>
+            `;
+            $('#lista-pokemon').append(template);
+
+
+
+        });
+    }
+
+    lastPokemonId = lastPokemonId + limitPag;
+    console.log(lastPokemonId)
+
+}
+
+
+function cleanPokemonList() {
+
+    $('#lista-pokemon').empty();
+
+}
+
 
 
