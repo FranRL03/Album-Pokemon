@@ -66,7 +66,7 @@ $(document).ready(function () {
                             break;
 
                         case 'electric':
-                            $('.divType').css("background-color", "yellow");
+                            $('.divType').css("background-color", "#D1BE00");
                             break;
 
                         case 'rock':

@@ -6,39 +6,39 @@
     background: linear-gradient(to right, rgb(6, 245, 133), rgb(33, 116, 77));
 }
 
-.poison{
-    background: linear-gradient(to right,  rgb(54, 54, 99), purple);
+.poison {
+    background: linear-gradient(to right, rgb(54, 54, 99), purple);
 }
 
-.fire{
+.fire {
     background: linear-gradient(to right, #f1bb5e, #f45151);
 }
 
-.water{
+.water {
     background: linear-gradient(to right, rgb(144, 203, 255), rgb(53, 53, 221));
 }
 
-.bug{
+.bug {
     background: linear-gradient(to right, rgb(133, 176, 103), rgb(8, 73, 43));
 }
 
-.normal{
+.normal {
     background: linear-gradient(to right, #b684d5, #6d31ce);
 }
 
-.psychic{
+.psychic {
     background: linear-gradient(to right, #f6c0ff, #c2269b);
 }
 
-.fighting{
+.fighting {
     background: linear-gradient(to right, #fac090, #ad6327);
 }
 
-.rock{
+.rock {
     background: linear-gradient(to right, #816855, #4d2d01);
 }
 
-.ground{
+.ground {
     background: linear-gradient(to right, #9d6c26, #7c6350);
 }
 
@@ -47,16 +47,16 @@
     width: 300px;
 }
 
-.ghost{
+.ghost {
     background: linear-gradient(to right, #76667e, #1f0050);
 }
 
-.fairy{
+.fairy {
     background: linear-gradient(to right, #a36a89, #c2269b);
 }
 
-.fondoModal{
-    background: linear-gradient(to right, #fcc3ff,#c80272);
+.fondoModal {
+    background: linear-gradient(to right, #fcc3ff, #c80272);
 }
 
 .miniDiv {
@@ -68,7 +68,7 @@
     border-bottom: solid rgb(202, 164, 59) 3px;
 }
 
-.divType{
+.divType {
     box-shadow: 6px 10px 10px rgb(102, 77, 114);
     display: inline-block;
     padding: 10px 20px;
@@ -77,4 +77,3 @@
     color: #fff;
     font-weight: bold;
 }
-
