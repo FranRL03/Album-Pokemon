@@ -28,22 +28,21 @@ $(document).ready(function () {
 
     });
 
-    $(document).on('click', '.item', function () {
-        
-        var pagina = $(this).attr('idPag');
+    $(document).on('click', '.item', function () {        
+        var pagina = $(this).attr('idPag');        
         $.ajax({
             url: `https://pokeapi.co/api/v2/item?limit=20$offset=${pagina - 1 * 20}`,
             type: 'GET'
-        }).done(function (itemPag) {
+        }).done(function (itemPag) {            
             var itemsPag = itemPag.results;
-            console.log(itemsPag);
+            borrar();
             itemsPag.forEach(function(objeto){
                 $.ajax({
                     url: objeto.url,
                     type: 'GET'
-                }).done(function(item){
+                }).done(function(item){                    
                     var template = `<div itemid="${item.id}" class="btn btn-detail badge rounded-pill col-2 mb-4 ms-5 mt-5"><img src=${item.sprites.default}> <p>${item.name}</p></div>`;
-            $('#lista-items').append(template);
+                    $('#lista-items').append(template);
                 });
                 
             });
@@ -70,3 +69,7 @@ $(document).ready(function () {
 
 
 });
+
+function borrar(){
+    $("#lista-items").empty();
+}
