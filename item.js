@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $.ajax({
-        url: 'https://pokeapi.co/api/v2/item?limit=20',
+        url: 'https://pokeapi.co/api/v2/item?limit=100',
         type: 'GET'
     }).done(function (resp) {
         var totalItems = resp.count;
