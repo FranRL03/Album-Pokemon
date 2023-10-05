@@ -29,14 +29,25 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.item', function () {
-        console.log('Hola');
+        
         var pagina = $(this).attr('idPag');
         $.ajax({
             url: `https://pokeapi.co/api/v2/item?limit=20$offset=${pagina - 1 * 20}`,
             type: 'GET'
         }).done(function (itemPag) {
-            var template = `<div itemid="${itemPag.id}" class="btn btn-detail badge rounded-pill col-2 mb-4 ms-5 mt-5"><img src=${itemPag.sprites.default}> <p>${itemPag.name}</p></div>`;
+            var itemsPag = itemPag.results;
+            console.log(itemsPag);
+            itemsPag.forEach(function(objeto){
+                $.ajax({
+                    url: objeto.url,
+                    type: 'GET'
+                }).done(function(item){
+                    var template = `<div itemid="${item.id}" class="btn btn-detail badge rounded-pill col-2 mb-4 ms-5 mt-5"><img src=${item.sprites.default}> <p>${item.name}</p></div>`;
             $('#lista-items').append(template);
+                });
+                
+            });
+            
         });
     });
 
