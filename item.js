@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     $(document).on('click', '.item', function () {
         console.log('Hola');
-        var pagina = $(this).atrr('idPag');
+        var pagina = $(this).attr('idPag');
         $.ajax({
             url: `https://pokeapi.co/api/v2/item?limit=20$offset=${pagina - 1 * 20}`,
             type: 'GET'
