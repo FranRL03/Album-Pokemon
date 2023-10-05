@@ -156,7 +156,7 @@ function renderPokemon(fromPokemon) {
             type: 'GET'
         }).done(function (resp) {
             pokemons.push(resp);
-
+            //console.log('Este es el fromPokemon ' + fromPokemon)
             var template = `
                 <div class="card btn-view-pokemon m-5 border-4 border-warning ${resp.types[0].type.name} carta-sombra" 
                 type="button" itemid="${resp.id}">
@@ -176,7 +176,7 @@ function renderPokemon(fromPokemon) {
     }
 
     lastPokemonId = lastPokemonId + limitPag;
-    console.log(lastPokemonId)
+    //console.log(lastPokemonId)
 
 }
 
