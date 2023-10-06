@@ -205,7 +205,7 @@ function getPokemonPag(offset) {
                         class="card-img-top" alt="..." height="240px">
                     <div class="card-body">
                         <div class="miniDiv ">
-                            <p class="text-center pt-3">${item.name}</p>   
+                            <p class="text-center pt-3 fw-bold">${item.name.toUpperCase()}</p>   
                         </div>
     
                     </div>
@@ -242,7 +242,7 @@ function renderPokemon2() {
                         class="card-img-top" alt="..." height="240px">
                     <div class="card-body">
                         <div class="miniDiv ">
-                            <p class="text-center pt-3">${resp2.name}</p>   
+                            <p class="text-center pt-3 fw-bold">${resp2.name.toUpperCase()}</p>   
                         </div>
     
                     </div>
