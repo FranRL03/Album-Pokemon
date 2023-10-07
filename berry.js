@@ -29,6 +29,9 @@ $(document).ready(function(){
             case 'cheri':
                 img = 'ttps://www.pokencyclopedia.info/sprites/items/berries/i_4_01--cheri-berry.png'
                 break;
+            default:
+                img='sin'
+                break;
         } 
         return img; 
     }            
