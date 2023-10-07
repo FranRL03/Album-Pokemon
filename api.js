@@ -133,8 +133,82 @@ $(document).ready(function () {
                     $('.divType').css("background-color", "#007881");
                     break;
             }
+            
+            if (typesPok[1] != null) {
+                switch (item.types[1].type.name) {
+                    case 'grass':
+                        $('.divType2').css("background-color", "green");
+                        break;
 
+                    case 'bug':
+                        $('.divType2').css("background-color", "#045119");
+                        break;
 
+                    case 'fire':
+                        $('.divType2').css("background-color", "red");
+                        break;
+
+                    case 'water':
+                        $('.divType2').css("background-color", "blue");
+                        break;
+
+                    case 'electric':
+                        $('.divType2').css("background-color", "#D1BE00");
+                        break;
+
+                    case 'rock':
+                        $('.divType2').css("background-color", "brown");
+                        break;
+
+                    case 'normal':
+                        $('.divType2').css("background-color", "#D4AED8");
+                        break;
+
+                    case 'dark':
+                        $('.divType2').css("background-color", "#313047");
+                        break;
+
+                    case 'dragon':
+                        $('.divType2').css("background-color", "#23BCC3");
+                        break;
+
+                    case 'fairy':
+                        $('.divType2').css("background-color", "#9E14A5");
+                        break;
+
+                    case 'fighting':
+                        $('.divType2').css("background-color", "#D77C27");
+                        break;
+
+                    case 'flying':
+                        $('.divType2').css("background-color", "#86ACB4");
+                        break;
+
+                    case 'ghost':
+                        $('.divType2').css("background-color", "#9050C6");
+                        break;
+
+                    case 'ground':
+                        $('.divType2').css("background-color", "#A96313");
+                        break;
+
+                    case 'ice':
+                        $('.divType2').css("background-color", "#A4FFFB");
+                        break;
+
+                    case 'poison':
+                        $('.divType2').css("background-color", "#8930C7");
+                        break;
+
+                    case 'psychic':
+                        $('.divType2').css("background-color", "pink");
+                        break;
+
+                    case 'steel':
+                        $('.divType2').css("background-color", "#007881");
+                        break;
+                }
+            }
 
             $('#pokemonModal').modal('show');
         });
