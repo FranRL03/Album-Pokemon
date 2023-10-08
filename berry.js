@@ -15,12 +15,12 @@ $(document).ready(function(){
                 });
                 
                 if (berry.id < 9) {
-                    var template = `<div itemid="${berry.id}" class="btn btn-detail badge rounded-pill col-2 mb-4 ms-5 mt-5"><img src='https://www.pokencyclopedia.info/sprites/items/berries/i_4_0${berry.id}--${berry.name}-berry.png'> <p>${berry.name}</p></div>`;
+                    var template = `<div berryId="${berry.id}" class="btn btn-detail badge rounded-pill col-2 mb-4 ms-5 mt-5"><img src='https://www.pokencyclopedia.info/sprites/items/berries/i_4_0${berry.id}--${berry.name}-berry.png'> <p>${berry.name}</p></div>`;
                     $('#lista-berrys').append(template);
                 }
     
                 if (berry.id >= 10) {
-                    var template = `<div itemid="${berry.id}" class="btn btn-detail badge rounded-pill col-2 mb-4 ms-5 mt-5"><img src='https://www.pokencyclopedia.info/sprites/items/berries/i_4_${berry.id}--${berry.name}-berry.png'> <p>${berry.name}</p></div>`;
+                    var template = `<div berryId="${berry.id}" class="btn btn-detail badge rounded-pill col-2 mb-4 ms-5 mt-5"><img src='https://www.pokencyclopedia.info/sprites/items/berries/i_4_${berry.id}--${berry.name}-berry.png'> <p>${berry.name}</p></div>`;
                     $('#lista-berrys').append(template);
                 }
     
@@ -57,12 +57,12 @@ $(document).ready(function(){
                     });
                     
                     if (berry.id < 9) {
-                        var template = `<div itemid="${berry.id}" class="btn btn-detail badge rounded-pill col-2 mb-4 ms-5 mt-5"><img src='https://www.pokencyclopedia.info/sprites/items/berries/i_4_0${berry.id}--${berry.name}-berry.png'> <p>${berry.name}</p></div>`;
+                        var template = `<div berryId="${berry.id}" class="btn btn-detail badge rounded-pill col-2 mb-4 ms-5 mt-5"><img src='https://www.pokencyclopedia.info/sprites/items/berries/i_4_0${berry.id}--${berry.name}-berry.png'> <p>${berry.name}</p></div>`;
                         $('#lista-berrys').append(template);
                     }
         
                     if (berry.id >= 10) {
-                        var template = `<div itemid="${berry.id}" class="btn btn-detail badge rounded-pill col-2 mb-4 ms-5 mt-5"><img src='https://www.pokencyclopedia.info/sprites/items/berries/i_4_${berry.id}--${berry.name}-berry.png'> <p>${berry.name}</p></div>`;
+                        var template = `<div berryId="${berry.id}" class="btn btn-detail badge rounded-pill col-2 mb-4 ms-5 mt-5"><img src='https://www.pokencyclopedia.info/sprites/items/berries/i_4_${berry.id}--${berry.name}-berry.png'> <p>${berry.name}</p></div>`;
                         $('#lista-berrys').append(template);
                     }
         
@@ -74,6 +74,26 @@ $(document).ready(function(){
         })
 
     }
+
+
+    $(document).on('click', '.btn-detail', function(){
+        var idBerry = $(this).attr('berryId');
+        $.ajax({
+            url: `https://pokeapi.co/api/v2/berry/${idBerry}`,
+            type: 'GET'
+        }).done(function(berry){
+            $('#berry-name').html(berry.name);
+            if(berry.id<9){
+                $('#imgBerry').attr('src', `https://www.pokencyclopedia.info/sprites/items/berries/i_4_0${berry.id}--${berry.name}-berry.png`);
+            }
+
+            if(berry.id>=10){
+                $('#imgBerry').attr('src', `https://www.pokencyclopedia.info/sprites/items/berries/i_4_${berry.id}--${berry.name}-berry.png`);
+            }
+            $('#descBerry').html(berry.flavors[0].flavor.name);
+            $('#berryModal').modal('show');
+        })
+    })
 
         /*function url (nombre){
             var img='';
