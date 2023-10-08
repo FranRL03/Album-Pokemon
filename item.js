@@ -12,7 +12,8 @@ $(document).ready(function () {
                 url: item.url,
                 type: 'GET'
             }).done(function (objeto) {
-                var template = `<div itemid="${objeto.id}" class="btn btn-detail badge rounded-pill col-2 mb-4 ms-5 mt-5"><img src=${objeto.sprites.default}> <p>${objeto.name}</p></div>`;
+                var template = `<div itemid="${objeto.id}" class="btn btn-detail badge rounded-pill col-2 mb-4 ms-5 mt-5 fw-bold">
+                    <img src=${objeto.sprites.default}> <p>${objeto.name.toUpperCase()}</p></div>`;
                 $('#lista-items').append(template);
             })
 
@@ -37,7 +38,7 @@ $(document).ready(function () {
             type: 'GET'
         }).done(function (item) {
 
-            $('#item-name').html(item.name);
+            $('#item-name').html(item.name.toUpperCase());
             $('#imgItem').attr('src', item.sprites.default);
             $('#descItem').html((item.flavor_text_entries[0].text).toUpperCase());
             console.log(item.flavor_text_entries.text)
@@ -59,7 +60,8 @@ $(document).ready(function () {
                     url: objeto.url,
                     type: 'GET'
                 }).done(function (item) {
-                    var template = `<div itemid="${item.id}" class="btn btn-detail badge rounded-pill col-2 mb-4 ms-5 mt-5"><img src=${item.sprites.default}> <p>${item.name}</p></div>`;
+                    var template = `<div itemid="${item.id}" class="btn btn-detail badge rounded-pill col-2 mb-4 ms-5 mt-5 fw-bold">
+                        <img src=${item.sprites.default}> <p>${item.name.toUpperCase()}</p></div>`;
                     $('#lista-items').append(template);
                 });
 
